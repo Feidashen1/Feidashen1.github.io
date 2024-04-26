@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Hexo</title>
+  <title>HI!FEI!</title>
   
   
-  <link href="http://example.com/atom.xml" rel="self"/>
+  <link href="https://github.com/Feidashen1/atom.xml" rel="self"/>
   
-  <link href="http://example.com/"/>
+  <link href="https://github.com/Feidashen1/"/>
   <updated>2024-04-25T15:10:56.311Z</updated>
-  <id>http://example.com/</id>
+  <id>https://github.com/Feidashen1/</id>
   
   <author>
-    <name>John Doe</name>
+    <name>Feidashen</name>
     
   </author>
   
@@ -18,8 +18,8 @@
   
   <entry>
     <title>NEW TEST</title>
-    <link href="http://example.com/2024/04/25/test1/"/>
-    <id>http://example.com/2024/04/25/test1/</id>
+    <link href="https://github.com/Feidashen1/2024/04/25/test1/"/>
+    <id>https://github.com/Feidashen1/2024/04/25/test1/</id>
     <published>2024-04-25T15:11:54.865Z</published>
     <updated>2024-04-25T15:10:56.311Z</updated>
     
@@ -38,8 +38,8 @@
   
   <entry>
     <title>“xinDD”</title>
-    <link href="http://example.com/2024/04/25/%E2%80%9CxinDD%E2%80%9D/"/>
-    <id>http://example.com/2024/04/25/%E2%80%9CxinDD%E2%80%9D/</id>
+    <link href="https://github.com/Feidashen1/2024/04/25/%E2%80%9CxinDD%E2%80%9D/"/>
+    <id>https://github.com/Feidashen1/2024/04/25/%E2%80%9CxinDD%E2%80%9D/</id>
     <published>2024-04-25T13:51:08.000Z</published>
     <updated>2024-04-25T13:51:08.703Z</updated>
     
@@ -51,8 +51,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="http://example.com/2024/04/25/hello-world/"/>
-    <id>http://example.com/2024/04/25/hello-world/</id>
+    <link href="https://github.com/Feidashen1/2024/04/25/hello-world/"/>
+    <id>https://github.com/Feidashen1/2024/04/25/hello-world/</id>
     <published>2024-04-25T13:34:49.693Z</published>
     <updated>2024-04-25T13:34:49.693Z</updated>
     
