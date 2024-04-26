@@ -3,11 +3,11 @@
   <title>HI!FEI!</title>
   
   
-  <link href="https://github.com/Feidashen1/atom.xml" rel="self"/>
+  <link href="http://example.com/atom.xml" rel="self"/>
   
-  <link href="https://github.com/Feidashen1/"/>
+  <link href="http://example.com/"/>
   <updated>2024-04-25T15:10:56.311Z</updated>
-  <id>https://github.com/Feidashen1/</id>
+  <id>http://example.com/</id>
   
   <author>
     <name>Feidashen</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>NEW TEST</title>
-    <link href="https://github.com/Feidashen1/2024/04/25/test1/"/>
-    <id>https://github.com/Feidashen1/2024/04/25/test1/</id>
+    <link href="http://example.com/2024/04/25/test1/"/>
+    <id>http://example.com/2024/04/25/test1/</id>
     <published>2024-04-25T15:11:54.865Z</published>
     <updated>2024-04-25T15:10:56.311Z</updated>
     
@@ -38,8 +38,8 @@
   
   <entry>
     <title>“xinDD”</title>
-    <link href="https://github.com/Feidashen1/2024/04/25/%E2%80%9CxinDD%E2%80%9D/"/>
-    <id>https://github.com/Feidashen1/2024/04/25/%E2%80%9CxinDD%E2%80%9D/</id>
+    <link href="http://example.com/2024/04/25/%E2%80%9CxinDD%E2%80%9D/"/>
+    <id>http://example.com/2024/04/25/%E2%80%9CxinDD%E2%80%9D/</id>
     <published>2024-04-25T13:51:08.000Z</published>
     <updated>2024-04-25T13:51:08.703Z</updated>
     
@@ -51,8 +51,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="https://github.com/Feidashen1/2024/04/25/hello-world/"/>
-    <id>https://github.com/Feidashen1/2024/04/25/hello-world/</id>
+    <link href="http://example.com/2024/04/25/hello-world/"/>
+    <id>http://example.com/2024/04/25/hello-world/</id>
     <published>2024-04-25T13:34:49.693Z</published>
     <updated>2024-04-25T13:34:49.693Z</updated>
     
