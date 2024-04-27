@@ -1,4 +1,2 @@
-http://example.com/2024/04/25/test1/
-http://example.com/2024/04/25/%E2%80%9CxinDD%E2%80%9D/
-http://example.com/2024/04/25/hello-world/
+http://example.com/2024/04/27/%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91/
 http://example.com/
