@@ -1,3 +1,4 @@
 http://example.com/2024/04/27/%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91/
 http://example.com/
-http://example.com/tags/%E9%9D%A2%E8%AF%95/
+http://example.com/tags/scrum/
+http://example.com/categories/%E5%BC%80%E5%8F%91%E6%96%B9%E6%B3%95/
