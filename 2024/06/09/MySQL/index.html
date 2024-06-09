@@ -296,7 +296,7 @@
 <li>B+ 树叶子节点之间用链表连接了起来，有利于范围查询，而 B 树要实现范围查询，因此只能通过树的遍历来完成范围查询，这会涉及多个节点的磁盘 I&#x2F;O 操作，范围查询效率不如 B+ 树。</li>
 </ol>
 <h2 id="7-为什么树的深度越深，IO次数越多？"><a href="#7-为什么树的深度越深，IO次数越多？" class="headerlink" title="7.为什么树的深度越深，IO次数越多？"></a>7.为什么树的深度越深，IO次数越多？</h2><p>树往往是用来存储数据的，树的一个节点往往对应着一个磁盘块，节点中可以存放数据，也可以存放指针（指针的指向就是节点对应的数据在磁盘中的位置），往往遍历获取树中数据的时候，我们就要与磁盘进行IO(读写操作)，而树的深度越深，那对应的节点不就越多，遍历时进行的IO操作也就越多。</p>
-<h2 id="8-页的数据结构？"><a href="#8-页的数据结构？" class="headerlink" title="8.页的数据结构？"></a>8.页的数据结构？</h2><p><img src="/..%5Cimg%5C%E9%A1%B5%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%841.jpg" alt="页的数据结构"><br><img src="/..%5Cimg%5C%E9%A1%B5%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%842.jpg" alt="页的数据结构"></p>
+<h2 id="8-页的数据结构？"><a href="#8-页的数据结构？" class="headerlink" title="8.页的数据结构？"></a>8.页的数据结构？</h2><p><img src="https://github.com/Feidashen1/Feidashen1.github.io/blob/hexo/source/img/%E9%A1%B5%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%841.jpg" alt="页的数据结构"><br><img src="https://github.com/Feidashen1/Feidashen1.github.io/blob/hexo/source/img/%E9%A1%B5%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%842.jpg" alt="页的数据结构"></p>
 <p>在 File Header 中有两个指针，分别指向上一个数据页和下一个数据页，连接起来的页相当于一个双向的链表，采用链表的结构是让数据页之间不需要是物理上的连续的，而是逻辑上的连续。</p>
 <p>数据页中的记录按照「主键」顺序组成单向链表，单向链表的特点就是插入、删除非常方便，但是检索效率不高，最差的情况下需要遍历链表上的所有节点才能完成检索。</p>
 <p>因此，数据页中有一个页目录，起到记录的索引作用。</p>
@@ -384,7 +384,7 @@
 <li>对于「串行化」隔离级别的事务来说，通过加<strong>读写锁</strong>的方式来避免并行访问；</li>
 <li>对于「读提交」和「可重复读」隔离级别的事务来说，它们是通过 Read View 来实现的，它们的区别在于创建 Read View 的时机不同，大家可以把 Read View 理解成一个数据快照，就像相机拍照那样，定格某一时刻的风景。「读提交」隔离级别是在「<strong>每个语句执行前</strong>」都会重新生成一个 Read View，而「可重复读」隔离级别是「<strong>启动事务时</strong>」生成一个 Read View，然后整个事务期间都在用这个 Read View。</li>
 </ol>
-<h2 id="4-Read-View-在-MVCC-里如何工作的？"><a href="#4-Read-View-在-MVCC-里如何工作的？" class="headerlink" title="4.Read View 在 MVCC 里如何工作的？"></a>4.Read View 在 MVCC 里如何工作的？</h2><p><img src="/..%5Cimg%5CReadView%E5%9B%9B%E4%B8%AA%E5%AD%97%E6%AE%B5.jpg" alt="页的数据结构"></p>
+<h2 id="4-Read-View-在-MVCC-里如何工作的？"><a href="#4-Read-View-在-MVCC-里如何工作的？" class="headerlink" title="4.Read View 在 MVCC 里如何工作的？"></a>4.Read View 在 MVCC 里如何工作的？</h2><p><img src="https://raw.githubusercontent.com/Feidashen1/Feidashen1.github.io/hexo/source/img/ReadView%E5%9B%9B%E4%B8%AA%E5%AD%97%E6%AE%B5.jpg" alt="页的数据结构"></p>
 <p>Read View 有四个重要的字段：</p>
 <ol>
 <li>m_ids ：指的是在创建 Read View 时，当前数据库中「活跃事务」的事务 id 列表，注意是一个列表，“活跃事务”指的就是，启动了但还没提交的事务。</li>
