@@ -55,7 +55,8 @@ buildExpired = false
 # PaperMod 主题参数
 # ─────────────────────────────────────────────
 [params]
-  env = "production"
+  # 不设 env=production：让 GA / OG 等仅在真实生产构建（GitHub Actions 的 hugo）注入，
+  # 本地 hugo server（开发模式）不加载统计代码，避免污染数据。
   description = "我的个人博客，记录技术与生活。"
   author = "Feidashen"
   defaultTheme = "auto"        # auto / light / dark
@@ -117,5 +118,5 @@ buildExpired = false
 # 留空则不加载统计代码。
 # ─────────────────────────────────────────────
 [services.googleAnalytics]
-  ID = ""              # 例如 "G-XXXXXXXXXX"
+  ID = "G-0DHLKH8LTF"
 
