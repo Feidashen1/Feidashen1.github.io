@@ -98,10 +98,10 @@ buildExpired = false
   # repo 留空则不显示评论。配置步骤见 使用说明.md。
   # ─────────────────────────────────────────────
   [params.giscus]
-    repo = ""            # 例如 "Feidashen1/Feidashen1.github.io"
-    repoId = ""          # giscus.app 生成的 data-repo-id
-    category = ""        # 例如 "Announcements"
-    categoryId = ""      # giscus.app 生成的 data-category-id
+    repo = "Feidashen1/Feidashen1.github.io"
+    repoId = "R_kgDOSukKjg"
+    category = "Announcements"
+    categoryId = "DIC_kwDOSukKjs4C-WCA"
     mapping = "pathname"
     reactionsEnabled = "1"
     inputPosition = "bottom"
