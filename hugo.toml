@@ -45,6 +45,11 @@ buildExpired = false
     name = "搜索"
     url = "/search/"
     weight = 40
+  [[menu.main]]
+    identifier = "about"
+    name = "关于"
+    url = "/about/"
+    weight = 50
 
 # ─────────────────────────────────────────────
 # PaperMod 主题参数
@@ -62,6 +67,7 @@ buildExpired = false
   ShowToc = true                # 文章目录
   TocOpen = false
   ShowWordCount = true
+  comments = true               # 全站开启评论（Giscus，见下方 [params.giscus]）
 
   # 首页个人信息模式
   [params.homeInfoParams]
@@ -86,6 +92,30 @@ buildExpired = false
     minMatchCharLength = 0
     keys = ["title", "permalink", "summary", "content"]
 
+  # ─────────────────────────────────────────────
+  # Giscus 评论（基于 GitHub Discussions）
+  # 去 https://giscus.app/zh-CN 按提示填写仓库，生成下面四个 ID 后填入。
+  # repo 留空则不显示评论。配置步骤见 使用说明.md。
+  # ─────────────────────────────────────────────
+  [params.giscus]
+    repo = ""            # 例如 "Feidashen1/Feidashen1.github.io"
+    repoId = ""          # giscus.app 生成的 data-repo-id
+    category = ""        # 例如 "Announcements"
+    categoryId = ""      # giscus.app 生成的 data-category-id
+    mapping = "pathname"
+    reactionsEnabled = "1"
+    inputPosition = "bottom"
+    lang = "zh-CN"
+
 # 搜索页需要输出 JSON 索引
 [outputs]
   home = ["HTML", "RSS", "JSON"]
+
+# ─────────────────────────────────────────────
+# Google Analytics 4（仅生产环境生效，本地预览不统计）
+# 去 https://analytics.google.com 创建媒体资源，拿到 G-XXXXXXXXXX 填入。
+# 留空则不加载统计代码。
+# ─────────────────────────────────────────────
+[services.googleAnalytics]
+  ID = ""              # 例如 "G-XXXXXXXXXX"
+
