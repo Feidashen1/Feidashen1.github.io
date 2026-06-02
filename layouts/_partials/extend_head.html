@@ -1,0 +1,34 @@
+{{- /* 写作能力增强：KaTeX 数学公式 / Mermaid 图表 / 图片点击放大。
+       放在 head（逐页渲染，不被 partialCached 缓存）。
+       数学公式：文章 front matter 加 math: true
+       Mermaid ：文章 front matter 加 mermaid: true */ -}}
+
+{{- /* ── KaTeX ─────────────────────────────────────── */ -}}
+{{- if .Param "math" }}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+  onload="renderMathInElement(document.body, {delimiters:[{left:'$$',right:'$$',display:true},{left:'\\[',right:'\\]',display:true},{left:'\\(',right:'\\)',display:false},{left:'$',right:'$',display:false}]});"></script>
+{{- end }}
+
+{{- /* ── Mermaid ───────────────────────────────────── */ -}}
+{{- if .Param "mermaid" }}
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+  const isDark = (document.documentElement.dataset.theme === 'dark') ||
+    (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+  mermaid.initialize({ startOnLoad: true, theme: isDark ? 'dark' : 'default' });
+</script>
+{{- end }}
+
+{{- /* ── medium-zoom：文章图片点击放大（单篇文章页）── */ -}}
+{{- if .IsPage }}
+<script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js"></script>
+<script>
+  window.addEventListener('load', function () {
+    if (window.mediumZoom) {
+      mediumZoom('.post-content img', { margin: 24, background: 'rgba(0,0,0,0.85)' });
+    }
+  });
+</script>
+{{- end }}

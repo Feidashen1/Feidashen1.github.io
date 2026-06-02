@@ -1,0 +1,10 @@
+{{- /* 用法： {{< notice tip >}} **内容** 支持 Markdown {{< /notice >}}
+       type 可选：info(默认)/tip/warning/danger/note */ -}}
+{{- $type := (.Get 0) | default "info" -}}
+{{- $icons := dict "info" "💡" "tip" "✅" "warning" "⚠️" "danger" "🛑" "note" "📝" -}}
+<div class="notice notice-{{ $type }}">
+  <span class="notice-icon">{{ index $icons $type | default "💡" }}</span>
+  <div class="notice-body">
+    {{- .Inner | .Page.RenderString -}}
+  </div>
+</div>
