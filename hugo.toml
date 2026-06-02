@@ -1,0 +1,91 @@
+baseURL = "https://Feidashen1.github.io/"
+languageCode = "zh-cn"
+title = "Feidashen 的博客"
+theme = "PaperMod"
+
+# 分页：每页文章数
+[pagination]
+  pagerSize = 10
+
+# 启用 robots.txt
+enableRobotsTXT = true
+buildDrafts = false
+buildFuture = false
+buildExpired = false
+
+# 代码高亮
+[markup.highlight]
+  noClasses = false
+
+[minify]
+  disableXML = true
+  minifyOutput = true
+
+# ─────────────────────────────────────────────
+# 顶部导航菜单
+# ─────────────────────────────────────────────
+[menu]
+  [[menu.main]]
+    identifier = "posts"
+    name = "文章"
+    url = "/posts/"
+    weight = 10
+  [[menu.main]]
+    identifier = "archives"
+    name = "归档"
+    url = "/archives/"
+    weight = 20
+  [[menu.main]]
+    identifier = "tags"
+    name = "标签"
+    url = "/tags/"
+    weight = 30
+  [[menu.main]]
+    identifier = "search"
+    name = "搜索"
+    url = "/search/"
+    weight = 40
+
+# ─────────────────────────────────────────────
+# PaperMod 主题参数
+# ─────────────────────────────────────────────
+[params]
+  env = "production"
+  description = "我的个人博客，记录技术与生活。"
+  author = "Feidashen"
+  defaultTheme = "auto"        # auto / light / dark
+  ShowReadingTime = true        # 显示阅读时长
+  ShowShareButtons = false      # 分享按钮
+  ShowPostNavLinks = true       # 上一篇/下一篇
+  ShowBreadCrumbs = true        # 面包屑
+  ShowCodeCopyButtons = true    # 代码块复制按钮
+  ShowToc = true                # 文章目录
+  TocOpen = false
+  ShowWordCount = true
+
+  # 首页个人信息模式
+  [params.homeInfoParams]
+    Title = "👋 你好，我是 Feidashen"
+    Content = "欢迎来到我的博客。这里记录我的技术笔记、项目和思考。"
+
+  # 社交图标（按需修改/删除）
+  [[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/Feidashen1"
+  [[params.socialIcons]]
+    name = "rss"
+    url = "/index.xml"
+
+  # 站内搜索（配合 search 页面与 Fuse.js）
+  [params.fuseOpts]
+    isCaseSensitive = false
+    shouldSort = true
+    location = 0
+    distance = 1000
+    threshold = 0.4
+    minMatchCharLength = 0
+    keys = ["title", "permalink", "summary", "content"]
+
+# 搜索页需要输出 JSON 索引
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
