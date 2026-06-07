@@ -12,15 +12,15 @@ comments: false
 
 你好，我是 **Feidashen** 👋
 
-这里写你的自我介绍，比如：
+记录学习：
 
-- 你是做什么的
-- 关注哪些技术 / 兴趣方向
-- 正在做的项目
+- C++
+- 计算机网络
+- 计算机系统
 
 ## 联系我
 
 - GitHub：[Feidashen1](https://github.com/Feidashen1)
-- Email：在这里填你的邮箱
+- Email：fengshfei@163.com
 
 > 这个页面的内容在 `content/about.md`，随时编辑后 `git push` 即可更新。
