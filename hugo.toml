@@ -1,132 +1,154 @@
-baseURL = "https://feidashen1.github.io/"
-languageCode = "zh-cn"
-title = "Feidashen 的博客"
-theme = "stack"
+baseURL       = "https://feidashen1.github.io/"
+languageCode  = "zh-cn"
+title         = "Feidashen 的博客"
+theme         = "stack"
+hasCJKLanguage = true
+enableRobotsTXT = true
+buildDrafts   = false
+buildFuture   = false
+buildExpired  = false
 
-# 分页：每页文章数
 [pagination]
   pagerSize = 10
 
-# 启用 robots.txt
-enableRobotsTXT = true
-buildDrafts = false
-buildFuture = false
-buildExpired = false
+[permalinks]
+  page = "/:slug/"
+# post 不设自定义 permalinks，保持默认 /posts/slug/ 路径，避免破坏已有链接
 
-# 代码高亮
+# ─── 代码高亮 ───────────────────────────────
 [markup.highlight]
-  noClasses = false
+  noClasses          = false
+  codeFences         = true
+  guessSyntax        = true
+  lineNos            = false
+  lineNumbersInTable = false
 
+# ─── Goldmark 数学公式 passthrough ──────────
+[markup.goldmark.extensions.passthrough]
+  enable = true
+  [markup.goldmark.extensions.passthrough.delimiters]
+    block  = [["\\[", "\\]"], ["$$", "$$"]]
+    inline = [["\\(", "\\)"], ["$", "$"]]
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+# ─── 目录 ───────────────────────────────────
+[tableOfContents]
+  endLevel   = 4
+  ordered    = false
+  startLevel = 2
+
+# ─── 压缩 ───────────────────────────────────
 [minify]
   disableXML = true
   minifyOutput = true
 
-# ─────────────────────────────────────────────
-# 顶部导航菜单
-# ─────────────────────────────────────────────
-[menu]
-  [[menu.main]]
-    identifier = "posts"
-    name = "文章"
-    url = "/posts/"
-    weight = 10
-  [[menu.main]]
-    identifier = "archives"
-    name = "归档"
-    url = "/archives/"
-    weight = 20
-  [[menu.main]]
-    identifier = "tags"
-    name = "标签"
-    url = "/tags/"
-    weight = 30
-  [[menu.main]]
-    identifier = "search"
-    name = "搜索"
-    url = "/search/"
-    weight = 40
-  [[menu.main]]
-    identifier = "about"
-    name = "关于"
-    url = "/about/"
-    weight = 50
-
-# ─────────────────────────────────────────────
-# PaperMod 主题参数
-# ─────────────────────────────────────────────
-[params]
-  # 不设 env=production：让 GA / OG 等仅在真实生产构建（GitHub Actions 的 hugo）注入，
-  # 本地 hugo server（开发模式）不加载统计代码，避免污染数据。
-  description = "我的个人博客，记录技术与生活。"
-  author = "Feidashen"
-  defaultTheme = "auto"        # auto / light / dark
-  ShowReadingTime = true        # 显示阅读时长
-  ShowShareButtons = false      # 分享按钮
-  ShowPostNavLinks = true       # 上一篇/下一篇
-  ShowBreadCrumbs = true        # 面包屑
-  ShowCodeCopyButtons = true    # 代码块复制按钮
-  ShowToc = true                # 文章目录
-  TocOpen = false
-  ShowWordCount = true
-  comments = true               # 全站开启评论（Giscus，见下方 [params.giscus]）
-
-  # 网站图标（统一指向 static/favicon.svg，避免默认 .ico/.png 404）
-  [params.assets]
-    favicon = "/favicon.svg"
-    favicon16x16 = "/favicon.svg"
-    favicon32x32 = "/favicon.svg"
-    apple_touch_icon = "/favicon.svg"
-    safari_pinned_tab = "/favicon.svg"
-    theme_color = "#6366f1"
-    msapplication_TileColor = "#6366f1"
-
-  # 首页个人信息模式
-  [params.homeInfoParams]
-    Title = "👋 你好，我是 Feidashen"
-    Content = "欢迎来到我的博客。这里记录我的技术笔记、项目和思考。"
-
-  # 社交图标（按需修改/删除）
-  [[params.socialIcons]]
-    name = "github"
-    url = "https://github.com/Feidashen1"
-  [[params.socialIcons]]
-    name = "rss"
-    url = "/index.xml"
-
-  # 站内搜索（配合 search 页面与 Fuse.js）
-  [params.fuseOpts]
-    isCaseSensitive = false
-    shouldSort = true
-    location = 0
-    distance = 1000
-    threshold = 0.4
-    minMatchCharLength = 0
-    keys = ["title", "permalink", "summary", "content"]
-
-  # ─────────────────────────────────────────────
-  # Giscus 评论（基于 GitHub Discussions）
-  # 去 https://giscus.app/zh-CN 按提示填写仓库，生成下面四个 ID 后填入。
-  # repo 留空则不显示评论。配置步骤见 使用说明.md。
-  # ─────────────────────────────────────────────
-  [params.giscus]
-    repo = "Feidashen1/Feidashen1.github.io"
-    repoId = "R_kgDOSukKjg"
-    category = "Announcements"
-    categoryId = "DIC_kwDOSukKjs4C-WCA"
-    mapping = "pathname"
-    reactionsEnabled = "1"
-    inputPosition = "bottom"
-    lang = "zh-CN"
-
-# 搜索页需要输出 JSON 索引
+# ─── 输出格式 ───────────────────────────────
 [outputs]
   home = ["HTML", "RSS", "JSON"]
 
-# ─────────────────────────────────────────────
-# Google Analytics 4（仅生产环境生效，本地预览不统计）
-# 去 https://analytics.google.com 创建媒体资源，拿到 G-XXXXXXXXXX 填入。
-# 留空则不加载统计代码。
-# ─────────────────────────────────────────────
+# ─── Google Analytics（仅生产环境注入）──────
 [services.googleAnalytics]
   ID = "G-0DHLKH8LTF"
 
+# ─── 顶部导航菜单 ───────────────────────────
+[menu]
+  [[menu.main]]
+    identifier = "posts"
+    name       = "文章"
+    url        = "/posts/"
+    weight     = 10
+  [[menu.main]]
+    identifier = "about"
+    name       = "关于"
+    url        = "/about/"
+    weight     = 50
+
+# ═══════════════════════════════════════════
+# Stack 主题参数
+# ═══════════════════════════════════════════
+[params]
+  mainSections      = ["posts"]
+  featuredImageField = "image"
+  rssFullContent    = true
+  favicon           = "/favicon.svg"
+
+  [params.footer]
+    since      = 2026
+    customText = ""
+
+  [params.dateFormat]
+    published   = "2006-01-02"
+    lastUpdated = "2006-01-02"
+
+  [params.sidebar]
+    emoji    = "📝"
+    subtitle = "记录技术与生活"
+    avatar   = ""
+    compact  = false
+
+  [params.article]
+    headingAnchor = true
+    math          = false
+    toc           = true
+    readingTime   = true
+
+    [params.article.list]
+      showTags = true
+
+    [params.article.license]
+      enabled = false
+
+    [params.article.mermaid]
+      look                  = "classic"
+      lightTheme            = "default"
+      darkTheme             = "dark"
+      securityLevel         = "strict"
+      htmlLabels            = true
+      transparentBackground = false
+
+  [params.widgets]
+    homepage = [
+      { type = "search" },
+      { type = "archives", params = { limit = 5 } },
+      { type = "categories", params = { limit = 10 } },
+      { type = "tag-cloud", params = { limit = 10 } },
+    ]
+    page = [{ type = "toc" }]
+
+  [params.opengraph.twitter]
+    site = ""
+    card = "summary_large_image"
+
+  [params.colorScheme]
+    toggle  = true
+    default = "auto"
+
+  [params.imageProcessing]
+    autoOrient = false
+    [params.imageProcessing.content]
+      widths  = [800, 1600]
+      enabled = true
+    [params.imageProcessing.thumbnail]
+      enabled = true
+
+  # ─── Giscus 评论 ────────────────────────
+  [params.comments]
+    enabled  = true
+    provider = "giscus"
+
+    [params.comments.giscus]
+      repo             = "Feidashen1/Feidashen1.github.io"
+      repoID           = "R_kgDOSukKjg"
+      category         = "Announcements"
+      categoryID       = "DIC_kwDOSukKjs4C-WCA"
+      mapping          = "pathname"
+      strict           = 0
+      reactionsEnabled = 1
+      emitMetadata     = 0
+      inputPosition    = "bottom"
+      lightTheme       = "light"
+      darkTheme        = "dark_dimmed"
+      lang             = "zh-CN"
+      loading          = "lazy"
