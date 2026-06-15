@@ -3,8 +3,8 @@ title: "GDB 命令及技巧"
 date: 2026-06-07T22:00:00+08:00
 draft: false
 tags: ["GDB", "系统"]
-categories: ["随笔"]
-summary: "学习一下 GDB 的东西和技巧，对自己比较模糊的地方做一下记录。"
+categories: ["工具"]
+description: "学习一下 GDB 的东西和技巧，对自己比较模糊的地方做一下记录。"
 ---
 
  

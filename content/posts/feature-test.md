@@ -2,18 +2,11 @@
 title: "功能测试：这篇文章用来检验博客的各项能力"
 date: 2026-06-02T15:30:00+08:00
 draft: false
-tags: ["测试", "Hugo", "PaperMod", "Markdown"]
+tags: ["测试", "Hugo", "Stack", "Markdown"]
 categories: ["测试"]
 math: true
-mermaid: true
-summary: "一篇覆盖目录、代码高亮、表格、图片、标签、脚注、数学公式、Mermaid 图表、提示框等功能的测试文章，用于发布后逐项验证博客是否正常。"
-ShowToc: true
-TocOpen: true
-cover:
-    image: "/images/test-banner.svg"
-    alt: "功能测试封面"
-    caption: "测试封面图（来自 static/images/test-banner.svg）"
-    relative: false
+description: "一篇覆盖目录、代码高亮、表格、图片、标签、脚注、数学公式、Mermaid 图表、提示框等功能的测试文章，用于发布后逐项验证博客是否正常。"
+image: "/images/test-banner.svg"
 ---
 
 这篇文章把博客目前启用的功能尽量都用一遍。**发布后请对照下面的清单逐项检查**。

@@ -3,8 +3,8 @@ title: "[C++] C++ 函数特性"
 date: 2026-06-14T16:00:00+08:00
 draft: false
 tags: ["C++", "C++ 函数特性"]
-categories: ["随笔"]
-summary: "内联、重载、默认参数、占位参数"
+categories: ["C++"]
+description: "内联、重载、默认参数、占位参数"
 ---
 
 # 1.内联函数

@@ -3,8 +3,8 @@ title: "[C++] 类和对象的理解"
 date: 2026-06-11T22:00:00+08:00
 draft: false
 tags: ["C++", "类和对象"]
-categories: ["随笔"]
-summary: "类和对象"
+categories: ["C++"]
+description: "类和对象"
 ---
 
 # 类和对象

@@ -3,8 +3,8 @@ title: "[C++] 构造与析构"
 date: 2026-06-14T20:00:00+08:00
 draft: false
 tags: ["C++", "构造与析构"]
-categories: ["随笔"]
-summary: "构造、析构"
+categories: ["C++"]
+description: "构造、析构"
 ---
 
 # 1.构造与析构概述

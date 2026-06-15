@@ -4,7 +4,7 @@ date: 2026-06-02T14:00:00+08:00
 draft: false
 tags: ["开始", "Hugo"]
 categories: ["随笔"]
-summary: "这是用 Hugo + PaperMod 搭建的博客的第一篇文章。"
+description: "这是用 Hugo + Stack 搭建的博客的第一篇文章。"
 ---
 
 ## 你好，世界 👋
@@ -16,7 +16,7 @@ summary: "这是用 Hugo + PaperMod 搭建的博客的第一篇文章。"
 ## 这个博客是怎么搭的
 
 - **生成器**：[Hugo](https://gohugo.io/)（Go 写的静态站点生成器，构建极快）
-- **主题**：[PaperMod](https://github.com/adityatelange/hugo-PaperMod)
+- **主题**：[Stack](https://github.com/CaiJimmy/hugo-theme-stack)（卡片式技术博客主题）
 - **托管**：GitHub Pages，通过 GitHub Actions 自动部署
 
 ## 如何写新文章
