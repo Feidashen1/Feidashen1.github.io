@@ -1,5 +1,0 @@
-{{- /* 把 ```mermaid 代码块渲染为 <pre class="mermaid">，并标记本页需加载 mermaid.js */ -}}
-<pre class="mermaid">
-{{- .Inner | safeHTML -}}
-</pre>
-{{- .Page.Store.Set "hasMermaid" true -}}
