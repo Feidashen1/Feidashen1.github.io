@@ -4,7 +4,7 @@
 #   make serve                 # 本地预览（含草稿）
 #   make build                 # 本地构建检查
 #   make publish m="更新说明"  # 提交并推送发布
-#   make upgrade               # 升级 PaperMod 主题
+#   make upgrade               # 升级 Stack 主题
 
 HUGO ?= hugo
 
@@ -16,7 +16,7 @@ help:
 	@echo "  make serve             本地预览，含草稿 -> http://localhost:1313"
 	@echo "  make build             本地构建到 public/ 做检查"
 	@echo "  make publish m=说明     git add+commit+push 一键发布"
-	@echo "  make upgrade           升级 PaperMod 主题"
+	@echo "  make upgrade           升级 Stack 主题"
 	@echo "  make clean             清理构建产物"
 
 # 新建文章：make new t=我的标题
@@ -43,9 +43,9 @@ publish:
 
 # 升级主题
 upgrade:
-	git submodule update --remote --merge themes/PaperMod
-	git add themes/PaperMod
-	git commit -m "升级 PaperMod 主题"
+	git submodule update --remote --merge themes/stack
+	git add themes/stack
+	git commit -m "升级 Stack 主题"
 	@echo "已升级，运行 make publish 推送，或 git push"
 
 # 清理构建产物
