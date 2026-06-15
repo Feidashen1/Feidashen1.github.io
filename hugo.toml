@@ -1,5 +1,5 @@
 baseURL       = "https://feidashen1.github.io/"
-languageCode  = "zh-cn"
+locale        = "zh-cn"
 title         = "Feidashen 的博客"
 theme         = "stack"
 hasCJKLanguage = true
@@ -46,7 +46,7 @@ buildExpired  = false
 
 # ─── 输出格式 ───────────────────────────────
 [outputs]
-  home = ["HTML", "RSS", "JSON"]
+  home = ["HTML", "RSS"]
 
 # ─── Google Analytics（仅生产环境注入）──────
 [services.googleAnalytics]
