@@ -1,7 +1,7 @@
 baseURL = "https://feidashen1.github.io/"
 languageCode = "zh-cn"
 title = "Feidashen 的博客"
-theme = "PaperMod"
+theme = "stack"
 
 # 分页：每页文章数
 [pagination]
