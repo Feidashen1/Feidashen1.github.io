@@ -5,27 +5,16 @@
   padding: 0.8rem 1rem;
   margin: 1.2rem 0;
   border-radius: 8px;
-  border: 1px solid var(--border);
+  border: 1px solid var(--card-background);
   border-left-width: 4px;
-  background: var(--entry);
+  background: var(--card-background);
 }
 .notice-icon { font-size: 1.2rem; line-height: 1.7; flex-shrink: 0; }
 .notice-body { flex: 1; }
 .notice-body > :first-child { margin-top: 0; }
-.notice-body > :last-child { margin-bottom: 0; }
+.notice-body > :last-child  { margin-bottom: 0; }
 .notice-info    { border-left-color: #3b82f6; }
 .notice-tip     { border-left-color: #22c55e; }
 .notice-warning { border-left-color: #f59e0b; }
 .notice-danger  { border-left-color: #ef4444; }
 .notice-note    { border-left-color: #8b5cf6; }
-
-/* ── 图片点击放大：提示可点 ──────────────────────── */
-.post-content img { cursor: zoom-in; }
-
-/* ── Mermaid 图表块 ─────────────────────────────── */
-pre.mermaid {
-  background: transparent;
-  text-align: center;
-  border: none;
-  padding: 0;
-}
