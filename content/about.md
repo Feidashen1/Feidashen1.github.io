@@ -1,18 +1,20 @@
 ---
 title: "关于"
-layout: "single"
-url: "/about/"
-summary: "关于我"
-ShowToc: false
-ShowReadingTime: false
+layout: "page"
+slug: "about"
+menu:
+    main:
+        weight: 50
+        params:
+            icon: user
 comments: false
 ---
 
 ## 关于我
 
 你好，我是 **Feidashen** 👋
- 
-刚开始工作，一些知识还是比较匮乏，通过写博客的方式来利用“输出倒逼输入” 来强制自己做一些学习，夯实一下基础
+
+刚开始工作，一些知识还是比较匮乏，通过写博客的方式来利用"输出倒逼输入" 来强制自己做一些学习，夯实一下基础
 
 记录学习：
 
