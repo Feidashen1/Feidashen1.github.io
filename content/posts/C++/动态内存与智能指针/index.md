@@ -87,16 +87,16 @@ __shared_count<_Lp>  _M_refcount;    // Reference counter.
 ```
 std::shared_ptr 在内部维护一个引用计数，其只有两个指针成员，**一个指针是所管理的数据的地址**；还有**一个指针是控制块的地址**，包括引用计数、weak_ptr计数、删除器(Deleter)、分配器(Allocator)。
 
-```
-+------------------------------------------+
-|               控制块 (Control Block)      |
-+------------------------------------------+
-
-| 1. Strong Ref Count (强引用计数)          | -> 决定对象何时被析构 (~T)
-| 2. Weak Ref Count   (弱引用计数)          | -> 决定控制块何时被销毁 (free)
-| 3. Custom Deleter   (自定义删除器, 可选)  | -> 用于非 delete 释放(如 fclose)
-| 4. Custom Allocator (自定义分配器, 可选)  | -> 用于控制块自身的内存分配
-+------------------------------------------+
+```mermaid
+block-beta
+    columns 2
+    block:cb:2["控制块 (Control Block)"]
+        columns 2
+        f1["1. Strong Ref Count (强引用计数)"] a1["→ 决定对象何时被析构 (~T)"]
+        f2["2. Weak Ref Count (弱引用计数)"] a2["→ 决定控制块何时被销毁 (free)"]
+        f3["3. Custom Deleter (自定义删除器, 可选)"] a3["→ 用于非 delete 释放 (如 fclose)"]
+        f4["4. Custom Allocator (自定义分配器, 可选)"] a4["→ 用于控制块自身的内存分配"]
+    end
 ```
 - **Strong Ref Count (强引用计数)**：记录当前有多少个 std::shared_ptr 指向该对象。
 - **Weak Ref Count (弱引用计数)**：记录当前有多少个 std::weak_ptr 指向该对象。注意：在标准库实现中，如果强引用计数大于 0，弱引用计数通常会隐式 +1（作为强引用的占位符号）。
