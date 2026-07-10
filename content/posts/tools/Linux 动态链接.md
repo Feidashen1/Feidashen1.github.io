@@ -1,6 +1,6 @@
 ---
 title: "Linux 动态链接"
-date: 2026-07-08T22:00:00+08:00
+date: 2026-07-010T22:00:00+08:00
 draft: false
 tags: ["Linux", "动态链接"]
 categories: ["工具"]
