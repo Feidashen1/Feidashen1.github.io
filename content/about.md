@@ -27,6 +27,5 @@ comments: false
 
 - GitHub：[Feidashen1](https://github.com/Feidashen1)
 - Email：fengshfei@163.com
-- QQ: 925923758
 
 > 感兴趣或者想要一起探讨的可以联系我
