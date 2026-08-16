@@ -108,10 +108,10 @@ Fast DDS拥有一个时间事件系统，该系统能够响应特定条件并调
 
 Fast DDS的事件驱动原理是基于回调函数的。当某个事件(如数据到达)发生时，系统会触发相应的回调函数来执行相应的处理逻辑。Fast DDS依赖于Boost ASIO库来实现事件驱动，采用异步I/O机制，使得Fast DDS能够高效地进行数据传输和交换。
 
-## 2.3 功能
+## 3 功能
 Fast DDS具有一些附加功能，用户可以在自己的应用程序中实现和配置这些功能。
 
-### 2.3.1 发现协议
+### 3.1 发现协议
 发现协议定义了一套机制：发布指定主题的**数据写入器（DataWriter）**与订阅同一主题的**数据读取器（DataReader）**通过该机制完成匹配，进而建立数据交互。该匹配过程可发生在通信生命周期内任意时刻。Fast DDS 提供以下几种发现机制：
 1. **Simple Discovery（简易发现）**
 这是默认的发现机制，遵循 RTPS 标准定义，能够与其他 DDS 实现版本互通。该模式下会先逐一发现各个域参与者（DomainParticipant），后续再完成其内部 DataWriter 与 DataReader 的匹配。
@@ -122,23 +122,23 @@ Fast DDS具有一些附加功能，用户可以在自己的应用程序中实现
 4. **Manual Discovery（手动发现）**
 该机制仅兼容 RTPS 层。用户可借助任意自选的外部元信息通道，手动完成 RTPSParticipant、RTPSWriter、RTPSReader 的匹配与解除匹配。
 
-### 2.3.2 安全
+### 3.2 安全
 Fast DDS 可配置为通过在三个级别实现可插拔安全性来提供安全通信：
 - Authentication of remote DomainParticipants：DDS:Auth:PKI-DH插件使用可信证书颁发机构（CA）和ECDSA数字签名算法提供认证，以执行相互认证。它还使用椭圆曲线Diffie-Hellman（ECDH）密钥协议建立共享密钥。
 - Access control of entities：DDS:Access:Permissions插件在DDS域和主题级别为域参与者提供访问控制。
 - Encryption of data：DDS:Crypto:AES-GCM-GMAC插件在伽罗瓦计数器模式（AES-GCM）中使用高级加密标准（AES）提供认证加密。
 
-### 2.3.3 日志
+### 3.3 日志
 Fast DDS 提供一套可扩展的日志系统。`Log` 类是日志系统的入口，对外暴露三个宏定义方便开发者使用：`EPROSIMA_LOG_INFO`、`EPROSIMA_LOG_WARNING`、`EPROSIMA_LOG_ERROR`。
 除此之外，除了已内置的日志类别（`INFO_MSG`、`WARN_MSG`、`ERROR_MSG`），开发者还可以自定义新的日志分类。
 日志系统支持通过正则表达式按照日志类别进行过滤，同时能够控制日志输出详细级别（日志冗长程度）。
 
-### 2.3.4 Xml 配置
+### 3.4 Xml 配置
 Fast DDS 支持通过 **XML 配置模板文件** 修改默认参数。开发者无需编写业务代码、也不用重新编译应用程序，即可调整各类 DDS 实体的运行行为。
 
 API 提供的各项功能均配套对应的 XML 标签。因此，可以通过 `<participant>` 标签创建并配置域参与者模板；也可以分别使用 `<data_writer>`、`<data_reader>` 标签配置数据写入器、数据读取器模板。
 
-### 2.3.5 环境变量
+### 3.5 环境变量
 环境变量是依托操作系统能力、在程序作用域之外定义的变量。Fast DDS 借助环境变量机制，让用户能够便捷地自定义 DDS 应用的默认参数。
 
 ---
